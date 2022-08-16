@@ -9,8 +9,7 @@ module.exports = {
   context: path.resolve(__dirname, 'source'),
   mode: 'development',
   entry: {
-    main: './js/main.js',
-    vendor: './js/vendor.js',
+    main: './js/main.js'
   },
   devtool: isDev ? 'source-map' : false,
   output: {
