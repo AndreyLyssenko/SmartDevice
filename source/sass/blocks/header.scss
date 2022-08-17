@@ -1,0 +1,88 @@
+.header {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: $main-white;
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+}
+
+.header__wrapper {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  max-width: 1160px;
+  padding: 30px 15px 35px;
+}
+
+.header__logo-link {
+  display: grid;
+  margin-right: auto;
+  width: 215px;
+  grid-template-columns: 55px 1fr;
+  gap: 15px;
+}
+
+.header__logo {
+  fill: $main-light-blue;
+}
+
+.header__logo-text {
+  p {
+    font-family: $roboto-condensed;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    margin: 0;
+  }
+
+  span {
+    font-family: $roboto;
+    color: rgba($sub-white, 0.7);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.header__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 480px;
+  justify-content: space-between;
+
+  a {
+    display: flex;
+    max-width: 225px;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: none;
+    color: $main-white;
+  }
+}
+
+.header__contacts-marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &--email {
+    background-image: url("../img/svg/email-icon.svg");
+  }
+
+  &--tel {
+    background-image: url("../img/svg/tel-icon.svg");
+  }
+}
+
+.header__button {
+  border: 1px solid $main-white;
+  margin-left: auto;
+}
