@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Печатные платы. Производство и монтаж, поставка комплектующих, блоков и модулей">
+    <link rel="preload" href="fonts/roboto-condensed-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/roboto-condensed-700.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/pt-mono-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/roboto-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
     <link rel="stylesheet" href="css/style.min.css">
@@ -14,7 +18,8 @@
     <header class="header">
       <div class="header__wrapper">
         <a class="header__logo-link">
-          <svg class="header__logo" width="55" height="55">
+          <svg class="header__logo" width="55" height="55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#smart-logo"></use>
           </svg>
           <div class="header__logo-text">
             <p>Smart Device</p>
@@ -60,32 +65,38 @@
         </div>
       </section>
       <section class="about" id="about">
-        <div class="about__img">
-          <img src="" alt="2022">
-        </div>
-        <div class="about__text-wrapper">
-          <h2>О компании</h2>
-          <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997&nbsp;года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10&nbsp;дней.</p>
-          <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
-          <div class="about__more">
-            <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000&nbsp;клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14&nbsp;офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.</p>
-            <p>Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
+        <div class="about__wrapper">
+          <div class="about__img">
+            <picture>
+              <!-- 1x: 150px; 2x: 300px -->
+              <source type="image/webp" srcset="img/content/2022.webp 1x, img/content/2022@2x.webp 2x">
+              <img src="img/content/2022.png" srcset="img/content/2022@2x.png 2x" width="150" height="320" alt="2022">
+          </picture>
           </div>
-          <button class="button about__button" type="button">Подробнее</button>
+          <div class="about__text-wrapper">
+            <h2>О компании</h2>
+            <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997&nbsp;года. Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10&nbsp;дней.</p>
+            <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+            <div class="about__more">
+              <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000&nbsp;клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день. На&nbsp;данный момент насчитывается более 14&nbsp;офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.</p>
+              <p>Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
+            </div>
+            <button class="button about__button" type="button">Подробнее</button>
+          </div>
         </div>
       </section>
       <section class="cards" id="cards">
         <div class="cards__wrapper">
           <h2>Smart Device предлагает следующие товары и услуги</h2>
           <div class="cards__list-wrapper">
-            <ul class="cards__ist">
-              <li class="cards__item">
+            <ul class="cards__list">
+              <li class="cards__item cards__item--manufacturing">
                 <a href="#">Производство печатных плат</a>
               </li>
-              <li class="cards__item">
+              <li class="cards__item cards__item--assembling">
                 <a href="#">Монтаж печатных плат</a>
               </li>
-              <li class="cards__item">
+              <li class="cards__item cards__item--accessories">
                 <a href="#">Комплектующие для&nbsp;светотехники</a>
               </li>
             </ul>
@@ -95,16 +106,20 @@
       <section class="feedback" id="feedback">
         <h2 class="visually-hidden">Связаться с нами</h2>
         <div class="feedback__wrapper">
-          <img src="" alt="Бумажный самолетик">
+          <picture>
+            <!-- 1x: 510; 2x: 1020 -->
+            <source type="image/webp" srcset="img/content/feedback-airpalne.webp 1x, img/content/feedback-airpalne@2x.webp 2x">
+            <img src="img/content/feedback-airpalne.png" srcset="img/content/feedback-airpalne@2x.png 2x" width="510" height="285" alt="бумажный самолетик">
+          </picture>
           <div class="feedback__form">
             <form action="https://echo.htmlacademy.ru/" method="post">
               <h3>Остались вопросы? Задайте их нам!</h3>
               <p>Мы проконсультируем Вас бесплатно</p>
               <fieldset>
                 <legend class="visually-hidden">Ваши контактные данные</legend>
-                <label for="feedback-name">Ваше имя:</label>
+                <label class="visually-hidden" for="feedback-name">Ваше имя:</label>
                 <input type="text" id="feedback-name" name="feedback-name" placeholder="Имя" required>
-                <label for="feedback-tel">Ваш номер телефона:</label>
+                <label class="visually-hidden" for="feedback-tel">Ваш номер телефона:</label>
                 <input type="text" id="feedback-tel" name="feedback-tel" placeholder="Телефон" required>
               </fieldset>
               <label class="visually-hidden" for="feedback-question">Задайте Ваш вопрос:</label>
@@ -126,9 +141,10 @@
     </main>
     <footer class="footer">
       <div class="footer__wrapper">
-        <div class="footer__socal-wrapper">
+        <div class="footer__social-wrapper">
           <a class="footer__logo-link">
-            <svg class="footer__logo" width="55" height="55">
+            <svg class="footer__logo" width="55" height="55" viewBox="0 0 55 55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#smart-logo"></use>
             </svg>
             <div class="footer__logo-text">
               <p>Smart Device</p>
@@ -139,24 +155,24 @@
             <li class="footer__social-item">
               <a class="footer__social-link" href="#">
                 <span class="visually-hidden">Pinterest</span>
-                <svg class="footer__social-logo" width="30" height="30">
-                  <use></use>
+                <svg class="footer__social-logo" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#pinterest-logo"></use>
                 </svg>
               </a>
             </li>
             <li class="footer__social-item">
               <a class="footer__social-link" href="#">
                 <span class="visually-hidden">Однокласники</span>
-                <svg class="footer__social-logo" width="30" height="30">
-                  <use></use>
+                <svg class="footer__social-logo" width="30" height="30" viewBox="0 0 30 30" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#ok-logo"></use>
                 </svg>
               </a>
             </li>
             <li class="footer__social-item">
               <a class="footer__social-link" href="#">
                 <span class="visually-hidden">VK</span>
-                <svg class="footer__social-logo" width="30" height="30">
-                  <use></use>
+                <svg class="footer__social-logo" width="30" height="30" viewBox="0 0 30 30" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="img/sprite.svg#vk-logo"></use>
                 </svg>
               </a>
             </li>
@@ -199,7 +215,7 @@
         </div>
       </div>
     </footer>
-    <div class="popup">
+    <div class="popup popup--close">
       <div class="popup__box">
         <div class="popup__content-wrapper">
           <h2>Закажите звонок</h2>

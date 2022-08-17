@@ -39,7 +39,7 @@ const js = () => {
 };
 
 const svgo = () => {
-  return gulp.src(['source/img/**/*.svg', '!source/img/sprite/*.svg'])
+  return gulp.src('source/img/**/*.svg')
       .pipe(imagemin([
         imagemin.svgo({
             plugins: [
@@ -49,7 +49,7 @@ const svgo = () => {
             ]
           }),
       ]))
-      .pipe(gulp.dest('build/img'));
+      .pipe(gulp.dest('source/img'));
 };
 
 const sprite = () => {
@@ -72,6 +72,8 @@ const copyImages = () => {
 const copy = () => {
   return gulp.src([
     'source/**.html',
+    'source/img/**',
+    '!source/img/sprite/**',
     'source/fonts/**',
     'source/favicon/**',
   ], {
