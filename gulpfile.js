@@ -39,7 +39,7 @@ const js = () => {
 };
 
 const svgo = () => {
-  return gulp.src('source/img/**/*.svg')
+  return gulp.src(['source/img/**/*.svg', '!source/img/sprite/*.svg'])
       .pipe(imagemin([
         imagemin.svgo({
             plugins: [
