@@ -22,11 +22,21 @@
     left: 0;
     background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
   }
+
+  @media (max-width: $desktop-width) {
+    padding-top: 180px;
+    padding-bottom: 205px;
+    min-height: 640px;
+    background-image: url("../img/decoration/main-bg-portable.jpg");
+    background-position-x: 20%;
+  }
 }
 
 .greetings__wrapper {
   position: relative;
   max-width: 800px;
+  box-sizing: border-box;
+  padding: 0 15px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -43,7 +53,7 @@
   }
 
   p {
-    width: 660px;
+    min-width: 660px;
     font-size: 22px;
     line-height: 34px;
     margin: 0 0 40px;
@@ -64,5 +74,28 @@
     width: 410px;
     min-height: 55px;
     border-radius: 3px;
+
+    &:hover,
+    &:focus {
+      color: $main-black;
+      background-color: $sub-white;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    padding: 0 50px;
+
+    h1 {
+      font-size: 64px;
+      line-height: 75px;
+    }
+
+    a {
+      margin-left: 45px;
+    }
+
+    p {
+      min-width: unset;
+    }
   }
 }

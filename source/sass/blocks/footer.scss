@@ -3,6 +3,10 @@
   width: 100%;
   color: $sub-white;
   background-color: $main-black;
+
+  @media (max-width: $desktop-width) {
+    padding: 55px 0 65px;
+  }
 }
 
 .footer__wrapper {
@@ -12,15 +16,27 @@
   box-sizing: border-box;
   padding: 0 15px;
   margin: 0 auto;
+
+  @media (max-width: $desktop-width) {
+    padding: 0 45px 0 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
 }
 
 .footer__logo-link {
   display: grid;
+  align-self: flex-start;
   margin-right: auto;
-  width: 215px;
+  min-width: 215px;
   grid-template-columns: 55px 1fr;
   gap: 15px;
   margin-bottom: 15px;
+
+  @media (max-width: $desktop-width) {
+    margin-bottom: 0;
+  }
 }
 
 .footer__logo {
@@ -49,6 +65,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: auto;
+
+  @media (max-width: $desktop-width) {
+    flex-direction: row;
+    width: 100%;
+    grid-column: 1 / -1;
+  }
 }
 
 .footer__social-list {
@@ -72,24 +95,37 @@
   align-items: center;
 
   a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      svg {
+        fill: $main-light-blue;
+      }
+    }
+  }
+
+  svg {
     width: 30px;
     height: 30px;
+    fill: $background-main-white;
+    color: $main-black;
   }
-}
-
-.footer__social-logo {
-  width: inherit;
-  height: inherit;
-  fill: $background-main-white;
-  color: $main-black;
 }
 
 .footer__navigation {
   max-width: 470px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin-left: auto;
+  max-height: 100%;
+  margin: 0 15px;
 
   h3 {
     margin: 0;
@@ -100,29 +136,36 @@
     line-height: 16px;
     margin-bottom: 20px;
   }
+
+  @media (max-width: $desktop-width) {
+    margin: 0;
+  }
 }
 
 .footer__navigation-list {
   list-style-type: none;
-  margin: 0 auto;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: space-between;
+  margin: 0;
+  max-width: inherit;
+  width: 100%;
+  columns: 220px 2;
+  column-gap: 30px;
+  column-fill: auto;
   height: 100%;
-  max-height: 150px;
 }
 
 .footer__navigation-item {
   display: block;
-  width: 220px;
   margin-bottom: 10px;
 
   a {
     color: rgba($sub-white, 0.7);
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $sub-white;
+    }
   }
 }
 
@@ -146,6 +189,11 @@
     color: rgba($sub-white, 0.7);
     text-decoration: none;
     display: block;
+
+    &:hover,
+    &:focus {
+      color: $sub-white;
+    }
   }
 }
 
