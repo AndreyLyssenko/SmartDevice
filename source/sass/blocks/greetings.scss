@@ -9,8 +9,7 @@
   background-size: cover;
   background-position: center;
   min-height: 880px;
-  padding-top: 305px;
-  padding-bottom: 280px;
+  padding: 305px 0 280px;
 
   &::before {
     content: "";
@@ -22,11 +21,25 @@
     left: 0;
     background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
   }
+
+  @media (max-width: $desktop-width) {
+    padding: 180px 0 205px;
+    min-height: 640px;
+    background-image: url("../img/decoration/main-bg-portable.jpg");
+    background-position-x: 20%;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 560px;
+    padding: 150px 0 190px;
+  }
 }
 
 .greetings__wrapper {
   position: relative;
   max-width: 800px;
+  box-sizing: border-box;
+  padding: 0 15px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -43,7 +56,7 @@
   }
 
   p {
-    width: 660px;
+    min-width: 660px;
     font-size: 22px;
     line-height: 34px;
     margin: 0 0 40px;
@@ -64,5 +77,61 @@
     width: 410px;
     min-height: 55px;
     border-radius: 3px;
+
+    &:hover,
+    &:focus {
+      color: $main-black;
+      background-color: $sub-white;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    padding: 0 50px;
+
+    h1 {
+      font-size: 64px;
+      line-height: 75px;
+    }
+
+    a {
+      margin-left: 45px;
+    }
+
+    p {
+      min-width: unset;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 25px;
+
+    h1 {
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 13px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 38px;
+    }
+
+    span {
+      display: none;
+    }
+
+    a {
+      font-size: 14px;
+      margin: 0;
+      width: 100%;
+      max-width: 270px;
+      align-self: flex-start;
+      min-height: 40px;
+
+      &::before {
+        content: "бесплатная консультация";
+      }
+    }
   }
 }

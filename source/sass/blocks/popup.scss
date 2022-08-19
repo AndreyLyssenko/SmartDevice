@@ -1,5 +1,190 @@
 .popup {
-  &--close {
+  display: none;
+
+  &--opened {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($main-dark-blue, 0.7);
+  }
+
+  @media (max-width: $desktop-width) {
     display: none;
+
+    &--open {
+      display: none;
+    }
+  }
+}
+
+.popup__box {
+  position: relative;
+  background-color: $main-light-blue;
+  color: $sub-white;
+  width: 500px;
+  min-height: 610px;
+}
+
+.popup__close-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  top: 15px;
+  right: 15px;
+
+  svg {
+    fill: $sub-white;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      opacity: 0.7;
+    }
+  }
+}
+
+.popup__content-wrapper {
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.popup__form {
+  width: 100%;
+
+  h3 {
+    font-family: $roboto-condensed;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    margin: 0 0 15px;
+  }
+
+  p {
+    margin: 0 0 35px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 20px;
+    width: 100%;
+  }
+
+  input {
+    margin: 0 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+    flex-grow: 1;
+    height: 50px;
+    padding: 15px;
+    font-family: $pt-mono;
+    color: $sub-white;
+    background-color: rgba(4, 20, 39, 0.15);
+    border-radius: 3px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &::placeholder {
+      color: $sub-white;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(4, 20, 39, 0.1);
+    }
+  }
+
+  textarea {
+    box-sizing: border-box;
+    color: $sub-white;
+    background-color: rgba(4, 20, 39, 0.15);
+    width: 100%;
+    height: 155px;
+    margin-bottom: 35px;
+    padding: 25px 15px 15px;
+    border: none;
+
+    &::placeholder {
+      color: $sub-white;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(4, 20, 39, 0.1);
+    }
+  }
+}
+
+.popup__submit {
+  width: 100%;
+}
+
+.popup__submit-button {
+  width: 100%;
+  background-color: $main-black;
+  margin-bottom: 20px;
+
+  &:hover,
+  &:focus {
+    background-color: $sub-white;
+    color: $main-black;
+  }
+}
+
+.popup__checkbox-field {
+  width: 100%;
+  padding: 0 9px;
+
+  span {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    min-width: 15px;
+    min-height: 15px;
+    border: 1px solid $sub-white;
+    border-radius: 2px;
+    margin-right: 10px;
+  }
+
+  input:checked + span {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 4px;
+      background-image: url("../img/svg/checkbox-arrow-icon.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    color: $sub-white;
+    font-size: 14px;
+    line-height: 16px;
   }
 }

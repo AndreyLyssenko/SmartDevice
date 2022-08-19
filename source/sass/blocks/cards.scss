@@ -3,11 +3,20 @@
   padding: 70px 0 140px;
   background-color: $main-black;
   color: $main-white;
+
+  @media (max-width: $desktop-width) {
+    padding: 60px 0 75px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 50px 0 86px;
+  }
 }
 
 .cards__wrapper {
+  box-sizing: border-box;
   width: 100%;
-  max-width: 1220px;
+  max-width: 1250px;
   padding: 0 15px;
   margin: 0 auto;
 
@@ -19,12 +28,35 @@
     margin: 0 0 50px;
     color: $sub-white;
   }
+
+  @media (max-width: $desktop-width) {
+    padding: 0 50px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 25px;
+
+    span {
+      display: none;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 39px;
+      margin-bottom: 40px;
+
+      &::before {
+        content: "Товары и услуги Smart\a0 Device";
+      }
+    }
+  }
 }
 
 .cards__list-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .cards__list {
@@ -32,16 +64,27 @@
   margin: 0;
   padding: 0;
   display: grid;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1220px;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, 350px);
   gap: 85px;
+
+  @media (max-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: $tablet-width) {
+    gap: 30px;
+  }
 }
 
 .cards__item {
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  height: 650px;
+  min-height: 650px;
   background-color: $main-light-blue;
   background-image: url("../img/decoration/main-bg.jpg");
   background-size: cover;
@@ -88,7 +131,7 @@
   a {
     display: block;
     width: inherit;
-    height: inherit;
+    min-height: inherit;
     box-sizing: border-box;
     padding: 50px 120px 0 40px;
     position: relative;
@@ -99,8 +142,39 @@
     font-size: 20px;
     line-height: 30px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: 0 0 10px 5px $main-light-blue;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    min-height: 250px;
+
+    a {
+      padding: 40px 45px;
+    }
+
+    span {
+      display: block;
+      width: 150px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    &::after {
+      width: 40px;
+      height: 40px;
+    }
+
+    a {
+      font-size: 18px;
+      padding: 30px;
+    }
+
+    span {
+      display: block;
+      width: 130px;
     }
   }
 }
