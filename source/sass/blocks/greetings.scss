@@ -9,8 +9,7 @@
   background-size: cover;
   background-position: center;
   min-height: 880px;
-  padding-top: 305px;
-  padding-bottom: 280px;
+  padding: 305px 0 280px;
 
   &::before {
     content: "";
@@ -24,11 +23,15 @@
   }
 
   @media (max-width: $desktop-width) {
-    padding-top: 180px;
-    padding-bottom: 205px;
+    padding: 180px 0 205px;
     min-height: 640px;
     background-image: url("../img/decoration/main-bg-portable.jpg");
     background-position-x: 20%;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 560px;
+    padding: 150px 0 190px;
   }
 }
 
@@ -96,6 +99,39 @@
 
     p {
       min-width: unset;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 25px;
+
+    h1 {
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 13px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 38px;
+    }
+
+    span {
+      display: none;
+    }
+
+    a {
+      font-size: 14px;
+      margin: 0;
+      width: 100%;
+      max-width: 270px;
+      align-self: flex-start;
+      min-height: 40px;
+
+      &::before {
+        content: "бесплатная консультация";
+      }
     }
   }
 }
