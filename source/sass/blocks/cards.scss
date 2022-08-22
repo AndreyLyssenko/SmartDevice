@@ -1,15 +1,15 @@
 .cards {
   width: 100%;
-  padding: 70px 0 140px;
+  padding: 64px 0 140px;
   background-color: $main-black;
   color: $main-white;
 
   @media (max-width: $desktop-width) {
-    padding: 60px 0 75px;
+    padding: 55px 0 75px;
   }
 
   @media (max-width: $tablet-width) {
-    padding: 50px 0 86px;
+    padding: 47px 0 86px;
   }
 }
 
@@ -25,12 +25,16 @@
     font-weight: 400;
     font-size: 36px;
     line-height: 51px;
-    margin: 0 0 50px;
+    margin: 0 0 54px;
     color: $sub-white;
   }
 
   @media (max-width: $desktop-width) {
     padding: 0 50px;
+
+    h2 {
+      margin-bottom: 38px;
+    }
   }
 
   @media (max-width: $tablet-width) {
@@ -43,7 +47,7 @@
     h2 {
       font-size: 28px;
       line-height: 39px;
-      margin-bottom: 40px;
+      margin-bottom: 29px;
 
       &::before {
         content: "Товары и услуги Smart\a0 Device";
@@ -73,10 +77,7 @@
   @media (max-width: $desktop-width) {
     display: flex;
     flex-direction: column;
-  }
-
-  @media (max-width: $tablet-width) {
-    gap: 30px;
+    gap: unset;
   }
 }
 
@@ -133,7 +134,7 @@
     width: inherit;
     min-height: inherit;
     box-sizing: border-box;
-    padding: 50px 120px 0 40px;
+    padding: 47px 120px 0 40px;
     position: relative;
     z-index: 1;
     font-family: $roboto-condensed;
@@ -150,14 +151,19 @@
 
   @media (max-width: $desktop-width) {
     min-height: 250px;
+    margin-bottom: 30px;
 
     a {
-      padding: 40px 45px;
+      padding: 37px 45px;
     }
 
     span {
       display: block;
       width: 150px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 
@@ -169,7 +175,7 @@
 
     a {
       font-size: 18px;
-      padding: 30px;
+      padding: 27px 30px;
     }
 
     span {

@@ -5,17 +5,17 @@
   background-image: url("../img/decoration/feeback-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 170px 0 250px;
+  padding: 165px 0 250px;
   overflow: hidden;
   z-index: 1;
 
   @media (max-width: $desktop-width) {
-    padding: 50px 0 125px;
+    padding: 45px 0 125px;
     background-image: none;
   }
 
   @media (max-width: $tablet-width) {
-    padding-bottom: 90px;
+    padding: 47px 0 88px;
   }
 }
 
@@ -27,7 +27,7 @@
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
-  max-width: 1210px;
+  max-width: 1245px;
   padding: 0 15px;
 
   @media (max-width: $desktop-width) {
@@ -42,6 +42,7 @@
 .feedback__img {
   display: flex;
   margin-right: 15px;
+  margin-top: 25px;
 
   img {
     object-fit: cover;
@@ -55,8 +56,10 @@
 }
 
 .feedback__form {
+  box-sizing: border-box;
+
   width: 100%;
-  max-width: 585px;
+  max-width: 593px;
   margin-left: auto;
 
   h3 {
@@ -65,12 +68,16 @@
     font-size: 36px;
     line-height: 51px;
     color: $sub-white;
-    margin: 0 0 15px;
+    margin: 0 0 12px;
   }
 
   p {
-    margin: 0 0 35px;
+    margin: 0 0 35px 5px;
     color: $sub-white;
+  }
+
+  form {
+    padding: 0 5px;
   }
 
   fieldset {
@@ -120,8 +127,9 @@
     color: $sub-white;
     background-color: rgba(4, 20, 39, 0.15);
     width: 100%;
+    max-width: 580px;
     height: 155px;
-    margin-bottom: 35px;
+    margin-bottom: 29px;
     padding: 25px 15px 15px;
     border: none;
 
@@ -140,8 +148,26 @@
     margin: 0;
     max-width: 100%;
 
+    h3 {
+      margin-bottom: 7px;
+    }
+
+    p {
+      margin-left: 0;
+      margin-bottom: 25px;
+    }
+
+    form {
+      padding: 0;
+    }
+
     input {
       max-width: 100%;
+    }
+
+    textarea {
+      padding-top: 32px;
+      max-width: unset;
     }
   }
 
@@ -149,12 +175,13 @@
     h3 {
       font-size: 30px;
       line-height: 42px;
-      margin-bottom: 10px;
+      margin-bottom: 7px;
     }
 
     p {
       font-size: 14px;
-      margin-bottom: 40px;
+      line-height: 19px;
+      margin-bottom: 34px;
     }
 
     fieldset {
@@ -171,8 +198,9 @@
     }
 
     textarea {
+      padding-top: 25px;
       min-height: 180px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -181,6 +209,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  max-width: 575px;
+
+  @media (max-width: $desktop-width) {
+    max-width: unset;
+  }
 
   @media (max-width: $tablet-width) {
     display: flex;
@@ -193,7 +226,10 @@
   flex-grow: 1;
   max-width: 265px;
   min-height: 45px;
+  font-size: 16px;
+  line-height: 19px;
   background-color: $main-dark-blue;
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
@@ -254,6 +290,7 @@
 
   @media (max-width: $desktop-width) {
     margin-right: 60px;
+    margin-bottom: 5px;
   }
 
   @media (max-width: $tablet-width) {

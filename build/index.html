@@ -55,32 +55,32 @@
         <h2 class="visually-hidden">Наши преимущства</h2>
         <div class="advantages__wrapper">
           <ul class="advantages__list">
-            <li class="advantages__item">
+            <li class="advantages__item advantages__item--time">
               <svg width="35" height="35" viewBox="0 0 35 35" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/sprite.svg#advantages-time-logo"></use>
               </svg>
               <h3>Оперативные сроки</h3>
               <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и&nbsp;доставлять заказы плат и&nbsp;комплектующих в&nbsp;самые короткие сроки.</p>
             </li>
-            <li class="advantages__item">
+            <li class="advantages__item advantages__item--supply">
               <svg width="35" height="35" viewBox="0 0 35 35" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/sprite.svg#advantages-supply-logo"></use>
               </svg>
               <h3>Крупные поставщики</h3>
               <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с&nbsp;такими компаниями обеспичивает хорошее качество нашей продукции.</p>
             </li>
-            <li class="advantages__item">
+            <li class="advantages__item advantages__item--confident">
               <svg width="35" height="35" viewBox="0 0 35 35" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/sprite.svg#advantages-confident-logo"></use>
               </svg>
-              <h3>Полная конфиден&shy;циальность</h3>
+              <h3>Полная конфиденциальность</h3>
               <p>По&nbsp;желанию клиента мы&nbsp;обеспечиваем полную конфеденциальность.</p>
             </li>
-            <li class="advantages__item">
+            <li class="advantages__item advantages__item--price">
               <svg width="35" height="35" viewBox="0 0 35 35" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/sprite.svg#advantages-price-logo"></use>
               </svg>
-              <h3>Персонали&shy;зация стоимости</h3>
+              <h3>Персонализация стоимости</h3>
               <p>Мы&nbsp;подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту&nbsp;цену, которая Вас устраивает.</p>
             </li>
           </ul>
@@ -136,18 +136,18 @@
             </picture>
           </div>
           <div class="feedback__form">
+            <h3>Остались вопросы? Задайте их нам!</h3>
+            <p>Мы проконсультируем Вас бесплатно</p>
             <form action="https://echo.htmlacademy.ru/" method="post">
-              <h3>Остались вопросы? Задайте их нам!</h3>
-              <p>Мы проконсультируем Вас бесплатно</p>
               <fieldset>
                 <legend class="visually-hidden">Ваши контактные данные</legend>
                 <label class="visually-hidden" for="feedback-name">Ваше имя:</label>
-                <input type="text" id="feedback-name" name="feedback-name" placeholder="Имя" required>
+                <input class="form-name" type="text" id="feedback-name" name="feedback-name" placeholder="Имя" required>
                 <label class="visually-hidden" for="feedback-tel">Ваш номер телефона:</label>
-                <input type="text" id="feedback-tel" name="feedback-tel" placeholder="Телефон" required>
+                <input class="form-tel" type="text" id="feedback-tel" name="feedback-tel" placeholder="Телефон" required data-phone-pattern>
               </fieldset>
               <label class="visually-hidden" for="feedback-question">Задайте Ваш вопрос:</label>
-              <textarea name="feedback-question" id="feedback-question" placeholder="Ваш вопрос"></textarea>
+              <textarea class="form-question" name="feedback-question" id="feedback-question" placeholder="Ваш вопрос"></textarea>
               <div class="feedback__submit">
                 <button class="button feedback__submit-button" type="submit">Задать вопрос</button>
                 <div class="feedback__checkbox-field">
@@ -243,7 +243,7 @@
             <span class="visually-hidden">Открыть меню</span>
           </button>
           <ul class="footer__list footer__list--no-js">
-            <li class="footer__item">
+            <li class="footer__item footer__item--address">
               <a href="https://goo.gl/maps/oEib39bQMpJ5seyv7" target="_blank">г. Мытищи, Олимпийский проспект, д.10</a>
             </li>
             <li class="footer__item">
@@ -269,18 +269,18 @@
             </svg>
           </button>
           <div class="popup__form">
+            <h3>Закажите звонок</h3>
+            <p>Оставьте контакты, мы&nbsp;проконсультируем вас&nbsp;бесплатно в&nbsp;удобное время</p>
             <form action="https://echo.htmlacademy.ru/" method="post">
-              <h3>Закажите звонок</h3>
-              <p>Оставьте контакты, мы&nbsp;проконсультируем вас&nbsp;бесплатно в&nbsp;удобное время</p>
               <fieldset>
                 <legend class="visually-hidden">Ваши контактные данные</legend>
                 <label class="visually-hidden" for="popup-name">Ваше имя:</label>
-                <input type="text" id="popup-name" name="popup-name" placeholder="Имя" required>
+                <input class="form-name" type="text" id="popup-name" name="popup-name" placeholder="Имя" required>
                 <label class="visually-hidden" for="popup-tel">Ваш номер телефона:</label>
-                <input type="text" id="popup-tel" name="popup-tel" placeholder="Телефон" required>
+                <input class="form-tel" type="text" id="popup-tel" name="popup-tel" placeholder="Телефон" required data-phone-pattern>
               </fieldset>
               <label class="visually-hidden" for="popup-question">Задайте Ваш вопрос:</label>
-              <textarea name="popup-question" id="popup-question" placeholder="Ваш вопрос"></textarea>
+              <textarea class="form-question" name="popup-question" id="popup-question" placeholder="Ваш вопрос"></textarea>
               <div class="popup__submit">
                 <button class="button popup__submit-button" type="submit">Отправить</button>
                 <div class="popup__checkbox-field">
@@ -296,6 +296,7 @@
         </div>
       </div>
     </div>
-    <script type="module" src="js/main.min.js" assync></script>
+    <script type="module" src="js/main.min.js" async></script>
+    <script type="module" src="js/vendor.min.js" async></script>
   </body>
 </html>

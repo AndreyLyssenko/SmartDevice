@@ -22,7 +22,10 @@
 }
 
 .popup__box {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-52%, -59%);
   background-color: $main-light-blue;
   color: $sub-white;
   width: 500px;
@@ -55,7 +58,7 @@
 }
 
 .popup__content-wrapper {
-  padding: 40px;
+  padding: 23px 40px;
   box-sizing: border-box;
 }
 
@@ -67,17 +70,21 @@
     font-weight: 400;
     font-size: 30px;
     line-height: 42px;
-    margin: 0 0 15px;
+    margin: 14px 0 0;
   }
 
   p {
-    margin: 0 0 35px;
+    margin: 0 0 39px;
+  }
+
+  form {
+    padding: 0 0 0 2px;
   }
 
   fieldset {
     border: none;
     padding: 0;
-    margin: 0 0 20px;
+    margin: 0 0 21px;
     width: 100%;
   }
 
@@ -118,9 +125,10 @@
     background-color: rgba(4, 20, 39, 0.15);
     width: 100%;
     height: 155px;
-    margin-bottom: 35px;
+    margin-bottom: 19px;
     padding: 25px 15px 15px;
     border: none;
+    resize: none;
 
     &::placeholder {
       color: $sub-white;
@@ -142,6 +150,8 @@
   width: 100%;
   background-color: $main-black;
   margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 19px;
 
   &:hover,
   &:focus {

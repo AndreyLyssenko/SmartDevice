@@ -37,7 +37,7 @@
 
 .greetings__wrapper {
   position: relative;
-  max-width: 800px;
+  max-width: 1000px;
   box-sizing: border-box;
   padding: 0 15px;
   width: 100%;
@@ -50,16 +50,16 @@
     font-family: $roboto-condensed;
     font-size: 80px;
     line-height: 94px;
-    margin: 0 0 40px;
+    margin: 0 0 32px;
     text-transform: uppercase;
     letter-spacing: 0.07em;
   }
 
   p {
-    min-width: 660px;
+    max-width: 660px;
     font-size: 22px;
     line-height: 34px;
-    margin: 0 0 40px;
+    margin: 0 0 46px;
   }
 
   a {
@@ -90,6 +90,7 @@
 
     h1 {
       font-size: 64px;
+      margin-bottom: 0;
       line-height: 75px;
     }
 
@@ -98,6 +99,7 @@
     }
 
     p {
+      margin-bottom: 57px;
       min-width: unset;
     }
   }
@@ -108,13 +110,13 @@
     h1 {
       font-size: 36px;
       line-height: 42px;
-      margin-bottom: 13px;
+      margin-bottom: 9px;
     }
 
     p {
       font-size: 14px;
       line-height: 22px;
-      margin-bottom: 38px;
+      margin-bottom: 43px;
     }
 
     span {
