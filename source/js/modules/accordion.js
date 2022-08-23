@@ -1,6 +1,7 @@
 const accordionItemLists = document.querySelectorAll('.footer__list');
 const accordionButtons = document.querySelectorAll('.footer__accordion-button');
 const accordionWrapper = document.querySelectorAll('.footer__list-wrapper');
+
 let svgLink = 'img/sprite.svg#accordion-closed-ico';
 let accordionTitles = [];
 

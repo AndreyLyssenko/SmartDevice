@@ -3,13 +3,38 @@
 
   &--opened {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
     position: fixed;
     z-index: 10;
     width: 100%;
     height: 100%;
     background-color: rgba($main-dark-blue, 0.7);
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  &--new-tab {
+    width: 100%;
+    height: 100%;
+
+    .popup__box {
+      padding-top: 100px;
+      padding-bottom: 50px;
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .popup__content-wrapper {
+      max-width: 1120px;
+    }
+
+    .popup__close-button {
+      display: none;
+    }
   }
 
   @media (max-width: $desktop-width) {
@@ -22,10 +47,8 @@
 }
 
 .popup__box {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-52%, -59%);
+  position: relative;
+  margin: auto;
   background-color: $main-light-blue;
   color: $sub-white;
   width: 500px;

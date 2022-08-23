@@ -15,8 +15,17 @@
   margin: 0 auto;
   padding: 30px 15px 35px;
 
+  form {
+    margin: 5px 60px 0 auto;
+    align-self: flex-start;
+  }
+
   @media (max-width: $desktop-width) {
     padding: 20px 70px 25px 50px;
+
+    form {
+      display: none;
+    }
   }
 
   @media (max-width: $tablet-width) {
@@ -25,6 +34,8 @@
 }
 
 .header__logo-link {
+  text-decoration: none;
+  color: $main-white;
   display: grid;
   margin-right: auto;
   align-self: flex-start;
@@ -140,13 +151,10 @@
   }
 }
 
+
 .header__button {
   border: 1px solid $main-white;
-  margin-left: auto;
   min-height: 38px;
-  margin-right: 60px;
-  margin-top: 5px;
-  align-self: flex-start;
 
   &:hover,
   &:focus {
@@ -154,9 +162,5 @@
     border: none;
     background-color: $sub-white;
     color: $main-black;
-  }
-
-  @media (max-width: $desktop-width) {
-    display: none;
   }
 }

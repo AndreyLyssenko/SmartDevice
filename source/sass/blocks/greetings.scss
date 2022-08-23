@@ -22,11 +22,19 @@
     background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
   }
 
+  @media (min-resolution: 2dppx) and (min-width: $desktop-width) {
+    background-image: url("../img/decoration/main-bg@2x.jpg");
+  }
+
   @media (max-width: $desktop-width) {
     padding: 180px 0 205px;
     min-height: 640px;
     background-image: url("../img/decoration/main-bg-portable.jpg");
     background-position-x: 20%;
+
+    @media (min-resolution: 2dppx) and (max-width: $desktop-width) {
+      background-image: url("../img/decoration/main-bg-portable@2x.jpg");
+    }
   }
 
   @media (max-width: $tablet-width) {
@@ -77,6 +85,8 @@
     width: 410px;
     min-height: 55px;
     border-radius: 3px;
+    padding: 5px;
+    box-sizing: border-box;
 
     &:hover,
     &:focus {

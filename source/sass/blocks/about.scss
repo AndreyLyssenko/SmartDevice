@@ -77,14 +77,27 @@
       line-height: 19px;
     }
 
-    span {
+    .about__more-mobile {
       display: none;
+
+      &--no-js {
+        display: inline;
+      }
+
+      &--show {
+        display: inline;
+      }
     }
   }
 }
 
 .about__more {
   display: none;
+
+  &--no-js {
+    margin-top: 10px;
+    display: block;
+  }
 
   &--show {
     display: block;
@@ -104,6 +117,10 @@
     border: none;
     background-color: $main-black;
     color: $sub-white;
+  }
+
+  &--no-js {
+    display: none;
   }
 
   @media (max-width: $desktop-width) {
