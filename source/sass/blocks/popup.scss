@@ -7,6 +7,10 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 10;
     width: 100%;
     height: 100%;
@@ -16,20 +20,25 @@
   }
 
   &--new-tab {
+    display: block;
     width: 100%;
     height: 100%;
+    background-color: $main-light-blue;
+    color: $sub-white;
 
-    .popup__box {
-      padding-top: 100px;
-      padding-bottom: 50px;
+    .popup__content-wrapper {
+      box-sizing: border-box;
+      max-width: 800px;
       width: 100%;
+      padding: 120px 0 50px;
       min-height: 100%;
       display: flex;
       justify-content: center;
     }
 
-    .popup__content-wrapper {
-      max-width: 1120px;
+    .popup__submit {
+      width: 100%;
+      margin: 0 auto;
     }
 
     .popup__close-button {
@@ -46,13 +55,15 @@
   }
 }
 
-.popup__box {
+.popup__content-wrapper {
   position: relative;
   margin: auto;
   background-color: $main-light-blue;
   color: $sub-white;
   width: 500px;
   min-height: 610px;
+  padding: 23px 40px;
+  box-sizing: border-box;
 }
 
 .popup__close-button {
@@ -80,10 +91,6 @@
   }
 }
 
-.popup__content-wrapper {
-  padding: 23px 40px;
-  box-sizing: border-box;
-}
 
 .popup__form {
   width: 100%;
@@ -105,6 +112,7 @@
   }
 
   fieldset {
+    position: relative;
     border: none;
     padding: 0;
     margin: 0 0 21px;

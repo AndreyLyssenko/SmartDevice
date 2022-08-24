@@ -1,9 +1,8 @@
 .about {
-  padding-top: 120px;
-  padding-bottom: 95px;
+  padding: 120px 0 95px;
 
   @media (max-width: $desktop-width) {
-    padding: 75px 0 80px;
+    padding: 75px 0 78px;
   }
 
   @media (max-width: $tablet-width) {
@@ -49,11 +48,11 @@
     font-weight: 400;
     font-size: 36px;
     line-height: 51px;
-    margin: 0 0 15px;
+    margin: 0 0 12px;
   }
 
   p {
-    margin: 0 0 19px;
+    margin: 0 0 21px;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -75,6 +74,7 @@
     p {
       font-size: 14px;
       line-height: 19px;
+      margin-bottom: 18px;
     }
 
     .about__more-mobile {
@@ -108,7 +108,7 @@
 .about__button {
   width: 180px;
   min-height: 45px;
-  margin-top: 38px;
+  margin-top: 39px;
   color: $main-light-blue;
   border: 1px solid $main-light-blue;
 
@@ -128,7 +128,7 @@
   }
 
   @media (max-width: $tablet-width) {
-    margin-top: 13px;
+    margin-top: 14px;
     width: 160px;
     min-height: 35px;
   }

@@ -8,7 +8,6 @@
     <link rel="preload" href="fonts/roboto-condensed-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/roboto-condensed-700.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <link rel="preload" href="fonts/pt-mono-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/roboto-500.woff2" type="font/woff2" as="font" crossorigin="anonymous">
     <meta name="format-detection" content="telephone=no"/>
     <meta name="format-detection" content="address=no"/>
     <link rel="stylesheet" href="css/style.min.css">
@@ -18,13 +17,12 @@
     <header class="header">
       <div class="header__wrapper">
         <a class="header__logo-link">
-          <svg class="header__logo" width="55" height="55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <svg class="header__logo header__logo--desktop" width="215" height="55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#smart-full-logo"></use>
+          </svg>
+          <svg class="header__logo header__logo--mobile" width="55" height="55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/sprite.svg#smart-logo"></use>
           </svg>
-          <div class="header__logo-text">
-            <p>Smart Device</p>
-            <span>умные технологии</span>
-          </div>
         </a>
         <div class="header__contacts">
           <a href="mailto:info@sd.ru">
@@ -50,7 +48,10 @@
         <div class="greetings__wrapper">
           <h1>Печатные платы</h1>
           <p>производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
-          <a href="#feedback"><span>Получить бесплатную консультацию</span></a>
+          <a href="#feedback">
+            <span>Получить бесплатную консультацию</span>
+            <span>Бесплатная консультация</span>
+          </a>
         </div>
       </section>
       <section class="advantages">
@@ -95,7 +96,7 @@
               <!-- 1x: 150px; 2x: 300px -->
               <source type="image/webp" srcset="img/content/2022.webp 1x, img/content/2022@2x.webp 2x">
               <img src="img/content/2022.png" srcset="img/content/2022@2x.png 2x" width="150" height="320" alt="2022">
-          </picture>
+            </picture>
           </div>
           <div class="about__text-wrapper">
             <h2>О компании</h2>
@@ -111,24 +112,27 @@
       </section>
       <section class="cards" id="cards">
         <div class="cards__wrapper">
-          <h2><span>Smart Device предлагает следующие товары и&nbsp;услуги</span></h2>
+          <h2>
+            <span>Smart Device предлагает следующие товары и&nbsp;услуги</span>
+            <span>Товары и услуги Smart&nbsp;Device</span>
+          </h2>
           <div class="cards__list-wrapper">
             <ul class="cards__list">
               <li class="cards__item cards__item--manufacturing">
-                <a href="#"><span>Производство печатных плат</span></a>
+                <a href="#">Производство печатных плат</a>
               </li>
               <li class="cards__item cards__item--assembling">
-                <a href="#"><span>Монтаж печатных плат</span></a>
+                <a href="#">Монтаж печатных плат</a>
               </li>
               <li class="cards__item cards__item--accessories">
-                <a href="#"><span>Комплектующие для&nbsp;светотехники</span></a>
+                <a href="#">Комплектующие для&nbsp;светотехники</a>
               </li>
             </ul>
           </div>
         </div>
       </section>
       <section class="feedback" id="feedback">
-        <h2 class="visually-hidden">Связаться с нами</h2>
+        <span class="visually-hidden">Связаться с нами</span>
         <div class="feedback__wrapper">
           <div class="feedback__img">
             <picture>
@@ -138,23 +142,24 @@
             </picture>
           </div>
           <div class="feedback__form">
-            <h3>Остались вопросы? Задайте их нам!</h3>
+            <h2>Остались вопросы? Задайте их нам!</h2>
             <p>Мы проконсультируем Вас бесплатно</p>
             <form action="https://echo.htmlacademy.ru/" method="post">
               <fieldset>
                 <legend class="visually-hidden">Ваши контактные данные</legend>
                 <label class="visually-hidden" for="feedback-name">Ваше имя:</label>
-                <input class="form-name" type="text" id="feedback-name" name="feedback-name" placeholder="Имя" required>
+                <input type="text" id="feedback-name" name="name" placeholder="Имя" required>
                 <label class="visually-hidden" for="feedback-tel">Ваш номер телефона:</label>
-                <input class="form-tel" type="text" id="feedback-tel" name="feedback-tel" placeholder="Телефон" required data-phone-pattern>
+                <input type="tel" id="feedback-tel" name="tel" placeholder="Телефон" required data-phone-pattern>
+                <span class="form-error-message">Это поле должно быть формата +7(555) 123-12-12</span>
               </fieldset>
               <label class="visually-hidden" for="feedback-question">Задайте Ваш вопрос:</label>
-              <textarea class="form-question" name="feedback-question" id="feedback-question" placeholder="Ваш вопрос"></textarea>
+              <textarea name="question" id="feedback-question" placeholder="Ваш вопрос"></textarea>
               <div class="feedback__submit">
                 <button class="button feedback__submit-button" type="submit">Задать вопрос</button>
                 <div class="feedback__checkbox-field">
                   <label for="feedback-processing-personal-data">
-                    <input class="visually-hidden" type="checkbox" name="feedback-processing-personal-data" id="feedback-processing-personal-data" required checked>
+                    <input class="visually-hidden" type="checkbox" name="processing-personal-data" id="feedback-processing-personal-data" required checked>
                     <span></span>
                     Я согласен на обработку  персональных данных
                   </label>
@@ -169,13 +174,9 @@
       <div class="footer__wrapper">
         <div class="footer__social-wrapper">
           <a class="footer__logo-link">
-            <svg class="footer__logo" width="55" height="55" viewBox="0 0 55 55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#smart-logo"></use>
+            <svg class="footer__logo" width="215" height="55" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#smart-full-logo"></use>
             </svg>
-            <div class="footer__logo-text">
-              <p>Smart Device</p>
-              <span>умные технологии</span>
-            </div>
           </a>
           <ul class="footer__social-list">
             <li class="footer__social-item">
@@ -204,14 +205,9 @@
             </li>
           </ul>
         </div>
-        <div class="footer__list-wrapper footer__list-wrapper--navigation">
+        <div class="footer__list-wrapper footer__list-wrapper--navigation footer__list-wrapper--no-js">
+          <button class="visually-hidden" type="button">Раскрыть меню</button>
           <h3>Разделы сайта</h3>
-          <button class="footer__accordion-button footer__accordion-button--no-js">
-            <svg width="15" height="15" viewBox="0 0 15 15" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#accordion-closed-ico"></use>
-            </svg>
-            <span class="visually-hidden">Открыть меню</span>
-          </button>
           <ul class="footer__list footer__list--no-js footer__list--navigation">
             <li class="footer__item">
               <a href="#about">О Компаниии</a>
@@ -236,14 +232,9 @@
             </li>
           </ul>
         </div>
-        <div class="footer__list-wrapper footer__list-wrapper--contacts">
+        <div class="footer__list-wrapper footer__list-wrapper--contacts footer__list-wrapper--no-js">
+          <button class="visually-hidden" type="button">Раскрыть меню</button>
           <h3>Наш офис</h3>
-          <button class="footer__accordion-button footer__accordion-button--no-js">
-            <svg width="15" height="15" viewBox="0 0 15 15" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#accordion-closed-ico"></use>
-            </svg>
-            <span class="visually-hidden">Открыть меню</span>
-          </button>
           <ul class="footer__list footer__list--no-js">
             <li class="footer__item footer__item--address">
               <a href="https://goo.gl/maps/oEib39bQMpJ5seyv7" target="_blank">г. Мытищи, Олимпийский проспект, д.10</a>
@@ -262,39 +253,38 @@
       </div>
     </footer>
     <div class="popup">
-      <div class="popup__box">
-        <div class="popup__content-wrapper">
-          <button class="popup__close-button" type="button">
-            <span class="visually-hidden">Закрыть окно</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/sprite.svg#popup-close-logo"></use>
-            </svg>
-          </button>
-          <div class="popup__form">
-            <h3>Закажите звонок</h3>
-            <p>Оставьте контакты, мы&nbsp;проконсультируем вас&nbsp;бесплатно в&nbsp;удобное время</p>
-            <form action="https://echo.htmlacademy.ru/" method="post">
-              <fieldset>
-                <legend class="visually-hidden">Ваши контактные данные</legend>
-                <label class="visually-hidden" for="popup-name">Ваше имя:</label>
-                <input class="form-name" type="text" id="popup-name" name="popup-name" placeholder="Имя" required>
-                <label class="visually-hidden" for="popup-tel">Ваш номер телефона:</label>
-                <input class="form-tel" type="text" id="popup-tel" name="popup-tel" placeholder="Телефон" required data-phone-pattern>
-              </fieldset>
-              <label class="visually-hidden" for="popup-question">Задайте Ваш вопрос:</label>
-              <textarea class="form-question" name="popup-question" id="popup-question" placeholder="Ваш вопрос"></textarea>
-              <div class="popup__submit">
-                <button class="button popup__submit-button" type="submit">Отправить</button>
-                <div class="popup__checkbox-field">
-                  <label for="popup-processing-personal-data">
-                    <input class="visually-hidden" type="checkbox" name="popup-processing-personal-data" id="popup-processing-personal-data" required checked>
-                    <span></span>
-                    Я согласен на обработку  персональных данных
-                  </label>
-                </div>
+      <div class="popup__content-wrapper">
+        <button class="popup__close-button" type="button">
+          <span class="visually-hidden">Закрыть окно</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#popup-close-logo"></use>
+          </svg>
+        </button>
+        <div class="popup__form">
+          <h3>Закажите звонок</h3>
+          <p>Оставьте контакты, мы&nbsp;проконсультируем вас&nbsp;бесплатно в&nbsp;удобное время</p>
+          <form action="https://echo.htmlacademy.ru/" method="post">
+            <fieldset>
+              <legend class="visually-hidden">Ваши контактные данные</legend>
+              <label class="visually-hidden" for="popup-name">Ваше имя:</label>
+              <input type="text" id="popup-name" name="name" placeholder="Имя" required>
+              <label class="visually-hidden" for="popup-tel">Ваш номер телефона:</label>
+              <input type="tel" id="popup-tel" name="tel" placeholder="Телефон" required data-phone-pattern>
+              <span class="form-error-message">Это поле должно быть формата +7(555) 123-12-12</span>
+            </fieldset>
+            <label class="visually-hidden" for="popup-question">Задайте Ваш вопрос:</label>
+            <textarea name="question" id="popup-question" placeholder="Ваш вопрос"></textarea>
+            <div class="popup__submit">
+              <button class="button popup__submit-button" type="submit">Отправить</button>
+              <div class="popup__checkbox-field">
+                <label for="popup-processing-personal-data">
+                  <input class="visually-hidden" type="checkbox" name="processing-personal-data" id="popup-processing-personal-data" required checked>
+                  <span></span>
+                  Я согласен на обработку  персональных данных
+                </label>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

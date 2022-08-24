@@ -29,7 +29,7 @@
     padding: 0 45px 0 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    gap: 29px;
     column-gap: 25px;
   }
 
@@ -45,12 +45,9 @@
 .footer__logo-link {
   text-decoration: none;
   color: $main-white;
-  display: grid;
   align-self: flex-start;
   margin-right: auto;
   min-width: 215px;
-  grid-template-columns: 55px 1fr;
-  gap: 15px;
   margin-bottom: 30px;
 
   @media (max-width: $desktop-width) {
@@ -58,33 +55,13 @@
   }
 
   @media (max-width: $tablet-width) {
-    margin: 0 auto 11px;
+    margin: 0 auto 9px;
     padding-right: 6px;
   }
 }
 
 .footer__logo {
   fill: $main-light-blue;
-}
-
-.footer__logo-text {
-  margin-top: 7px;
-
-  p {
-    font-family: $roboto-condensed;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 25px;
-    margin: 0;
-  }
-
-  span {
-    font-family: $roboto;
-    color: rgba($sub-white, 0.7);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-  }
 }
 
 .footer__social-wrapper {
@@ -95,6 +72,7 @@
   @media (max-width: $desktop-width) {
     flex-direction: row;
     width: 100%;
+    align-items: flex-start;
     grid-column: 1 / -1;
     margin-bottom: 2px;
   }
@@ -103,7 +81,7 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 0 25px;
-    margin: 0 0 23px;
+    margin: 0 0 24px;
   }
 }
 
@@ -121,9 +99,10 @@
     margin-top: 5px;
   }
 
-  @media (max-width: $desktop-width) {
+  @media (max-width: $tablet-width) {
+    justify-self: start;
     align-self: center;
-    margin-right: 6px;
+    margin: 0 0 0 3px;
   }
 }
 
@@ -181,6 +160,10 @@
     max-width: 345px;
   }
 
+  button {
+    display: none;
+  }
+
   h3 {
     margin: 0;
     font-family: $roboto-condensed;
@@ -209,14 +192,57 @@
     max-width: 100%;
     box-sizing: border-box;
     border-top: 1px solid rgba(248, 253, 255, 0.7);
+    position: relative;
 
     &:last-of-type {
       border-bottom: 1px solid rgba(248, 253, 255, 0.7);
     }
 
+    button {
+      display: block;
+
+      &:focus + h3 {
+        outline: 2px solid $main-light-blue;
+        outline-offset: 1px;
+      }
+    }
+
     h3 {
-      padding: 23px 25px 18px;
+      padding: 23px 24px 19px;
       margin: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 26px;
+      width: 15px;
+      height: 15px;
+      background-image: url("../img/svg/accordion-closed-ico.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--no-js {
+      button {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &--opened {
+      h3 {
+        padding-bottom: 18px;
+      }
+
+      &::after {
+        background-image: url("../img/svg/accordion-opened-ico.svg");
+      }
     }
   }
 }
@@ -277,28 +303,5 @@
     &--address {
       margin-bottom: 18px;
     }
-  }
-}
-
-.footer__accordion-button {
-  display: none;
-
-  @media (max-width: $tablet-width) {
-    &--no-js {
-      display: none;
-    }
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: min-content;
-    height: min-content;
-    position: absolute;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    top: 20px;
-    right: 26px;
   }
 }

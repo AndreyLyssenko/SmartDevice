@@ -78,7 +78,7 @@
     font-size: 18px;
     line-height: 21px;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     text-decoration: none;
     color: $main-white;
     background-color: $main-light-blue;
@@ -93,6 +93,10 @@
       color: $main-black;
       background-color: $sub-white;
     }
+  }
+
+  span:last-of-type {
+    display: none;
   }
 
   @media (max-width: $desktop-width) {
@@ -129,10 +133,6 @@
       margin-bottom: 43px;
     }
 
-    span {
-      display: none;
-    }
-
     a {
       font-size: 14px;
       margin: 0;
@@ -140,10 +140,14 @@
       max-width: 270px;
       align-self: flex-start;
       min-height: 40px;
+    }
 
-      &::before {
-        content: "бесплатная консультация";
-      }
+    span:first-of-type {
+      display: none;
+    }
+
+    span:last-of-type {
+      display: inline;
     }
   }
 }

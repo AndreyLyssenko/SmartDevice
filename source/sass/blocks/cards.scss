@@ -29,6 +29,10 @@
     color: $sub-white;
   }
 
+  span:last-of-type {
+    display: none;
+  }
+
   @media (max-width: $desktop-width) {
     padding: 0 50px;
 
@@ -40,18 +44,18 @@
   @media (max-width: $tablet-width) {
     padding: 0 25px;
 
-    span {
-      display: none;
-    }
-
     h2 {
       font-size: 28px;
       line-height: 39px;
       margin-bottom: 29px;
+    }
 
-      &::before {
-        content: "Товары и услуги Smart\a0 Device";
-      }
+    span:first-of-type {
+      display: none;
+    }
+
+    span:last-of-type {
+      display: inline;
     }
   }
 }
@@ -159,7 +163,7 @@
     background-image: url("../img/decoration/main-bg-portable.jpg");
 
     a {
-      padding: 37px 45px;
+      padding: 37px 475px 37px 45px;
     }
 
     span {
@@ -184,7 +188,7 @@
 
     a {
       font-size: 18px;
-      padding: 27px 30px;
+      padding: 27px 105px 27px 30px;
     }
 
     span {

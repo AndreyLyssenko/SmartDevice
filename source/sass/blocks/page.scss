@@ -4,6 +4,7 @@
 }
 
 .page__body {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,8 +18,8 @@
   background-color: $background-main-white;
   margin: 0 auto;
   width: 100%;
-
-  &--modal-open {
-    overflow: hidden;
-  }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

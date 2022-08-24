@@ -36,12 +36,9 @@
 .header__logo-link {
   text-decoration: none;
   color: $main-white;
-  display: grid;
   margin-right: auto;
   align-self: flex-start;
   min-width: 215px;
-  grid-template-columns: 55px 1fr;
-  gap: 15px;
 
   @media (max-width: $tablet-width) {
     display: block;
@@ -53,34 +50,23 @@
 
 .header__logo {
   fill: $main-light-blue;
+  color: $main-white;
+
+  &--mobile {
+    display: none;
+  }
 
   @media (max-width: $tablet-width) {
     width: 35px;
     height: 35px;
-  }
-}
 
-.header__logo-text {
-  margin-top: 7px;
+    &--desktop {
+      display: none;
+    }
 
-  p {
-    font-family: $roboto-condensed;
-    font-weight: 700;
-    font-size: 25px;
-    line-height: 25px;
-    margin: 0;
-  }
-
-  span {
-    font-family: $roboto;
-    color: rgba($sub-white, 0.7);
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-  }
-
-  @media (max-width: $tablet-width) {
-    display: none;
+    &--mobile {
+      display: block;
+    }
   }
 }
 
@@ -90,7 +76,7 @@
   max-width: 460px;
   width: 100%;
   justify-content: space-between;
-  margin: 0 15px 4px 13px;
+  margin: 0 17px 12px 13px;
 
   a {
     display: flex;
