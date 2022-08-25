@@ -5,12 +5,14 @@ import {
 
 const popup = document.querySelector('.popup');
 const popupTrigger = document.querySelector('.header__button');
-const popupCloseButton = document.querySelector('.popup__close-button');
-const popupContainer = document.querySelector('.popup__content-wrapper');
-const popupNameField = popup.querySelector('#popup-name');
 const bodySelector = document.querySelector('.page__body');
+const popupCloseButton = popup.querySelector('.popup__close-button');
+const popupContainer = popup.querySelector('.popup__content-wrapper');
+const popupNameField = popup.querySelector('[name = "name"]');
 
-popupTrigger.setAttribute('type', 'button');
+if (popupTrigger) {
+  popupTrigger.setAttribute('type', 'button');
+}
 
 const escKeyCb = (evt) => {
   if (isEscapeKey(evt)) {
@@ -20,7 +22,7 @@ const escKeyCb = (evt) => {
 };
 
 const mouseupCb = (evt) => {
-  if (!popupContainer.contains(evt.target)) {
+  if (popupContainer && !popupContainer.contains(evt.target)) {
     closePopup();
   }
 };
@@ -53,16 +55,13 @@ const getScrollBarWidth = () => {
   return scrollBarWidth;
 };
 
+
 function openPopup() {
+  bodySelector.style.paddingRight = `${getScrollBarWidth()}px`;
+  bodySelector.querySelector('.header').style.width = `${bodySelector.offsetWidth}px`;
+  bodySelector.style.overflow = 'hidden';
   popup.classList.toggle('popup--opened');
   popupNameField.focus();
-
-  if (popup) {
-    bodySelector.style.paddingRight = `${getScrollBarWidth()}px`;
-    bodySelector.querySelector('.header').style.width = `${bodySelector.offsetWidth}px`;
-    bodySelector.style.overflow = 'hidden';
-  }
-
   document.addEventListener('keydown', escKeyCb);
   document.addEventListener('mouseup', mouseupCb);
   focusControl();
@@ -74,16 +73,17 @@ function closePopup() {
   bodySelector.querySelector('.header').style.width = '';
   bodySelector.style.paddingRight = '';
   bodySelector.style.overflow = 'visible';
-  bodySelector.querySelector('.page__body-wrapper').style.width = '';
   document.removeEventListener('keydown', escKeyCb);
   document.removeEventListener('mouseup', mouseupCb);
   focusControl();
 }
 
-popupTrigger.addEventListener('click', () => {
-  openPopup();
-});
+if (popupTrigger && popup && popupContainer) {
+  popupTrigger.addEventListener('click', () => {
+    openPopup();
+  });
 
-popupCloseButton.addEventListener('click', () => {
-  closePopup();
-});
+  popupCloseButton.addEventListener('click', () => {
+    closePopup();
+  });
+}

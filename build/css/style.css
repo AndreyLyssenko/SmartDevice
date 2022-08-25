@@ -2398,6 +2398,8 @@ template {
   }
 
   .footer__list-wrapper h3 {
+    position: relative;
+    z-index: 1;
     padding: 23px 24px 19px;
     margin: 0;
   }

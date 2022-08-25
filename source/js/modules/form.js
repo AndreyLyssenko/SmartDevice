@@ -1,7 +1,4 @@
-const form = [
-  document.querySelector('.feedback__form').querySelector('form'),
-  document.querySelector('.popup__form').querySelector('form')
-];
+const form = document.querySelectorAll('[action="https://echo.htmlacademy.ru/"]');
 const re = /^.{17}$/;
 
 form.forEach((el) => {
