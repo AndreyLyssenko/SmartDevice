@@ -30,7 +30,8 @@
     padding: 180px 0 205px;
     min-height: 640px;
     background-image: url("../img/decoration/main-bg-portable.jpg");
-    background-position-x: 20%;
+    background-size: 184%;
+    background-position: 1% 49%;
 
     @media (min-resolution: 2dppx) and (max-width: $desktop-width) {
       background-image: url("../img/decoration/main-bg-portable@2x.jpg");
@@ -40,6 +41,8 @@
   @media (max-width: $tablet-width) {
     min-height: 560px;
     padding: 150px 0 190px;
+    background-size: auto 119%;
+    background-position: 25.5% 48%;
   }
 }
 

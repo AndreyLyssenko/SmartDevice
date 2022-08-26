@@ -557,17 +557,19 @@ template {
 }
 
 .header__contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  max-width: 460px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 225px);
+  -webkit-column-gap: 27px;
+  -moz-column-gap: 27px;
+  column-gap: 27px;
+  row-gap: 10px;
+  max-width: 510px;
   width: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: 0 17px 12px 13px;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 0 12px 17px;
 }
 
 .header__contacts a {
@@ -933,7 +935,8 @@ template {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 350px);
+  -ms-grid-columns: (minmax(100px, 350px))[3];
+  grid-template-columns: repeat(3, minmax(100px, 350px));
   gap: 85px;
 }
 
@@ -1186,6 +1189,10 @@ template {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -1296,7 +1303,7 @@ template {
   align-self: flex-start;
   margin-right: auto;
   min-width: 215px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .footer__logo {
@@ -1317,17 +1324,13 @@ template {
 .footer__social-list {
   margin: 0 0 0 10px;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 40px);
+  gap: 15px;
   list-style-type: none;
   max-width: 150px;
   width: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .footer__social-item {
@@ -1676,6 +1679,13 @@ template {
 }
 
 .popup__submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
   width: 100%;
 }
 
@@ -1725,6 +1735,12 @@ template {
   transform: translate(-50%, -50%);
 }
 
+.popup__checkbox-field input:hover + span,
+.popup__checkbox-field input:focus + span {
+  cursor: pointer;
+  border-color: #041827;
+}
+
 .popup__checkbox-field label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1748,6 +1764,12 @@ template {
 }
 
 @media (max-width: 1023px) {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   .header__wrapper {
     padding: 20px 70px 25px 50px;
   }
@@ -1762,6 +1784,11 @@ template {
   }
 
   .header__contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: unset;
+    padding: 0;
     margin: 0;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -1790,7 +1817,8 @@ template {
     padding: 180px 0 205px;
     min-height: 640px;
     background-image: url("../img/decoration/main-bg-portable.jpg");
-    background-position-x: 20%;
+    background-size: 184%;
+    background-position: 1% 49%;
   }
 
   .greetings__wrapper {
@@ -1882,6 +1910,19 @@ template {
     min-height: 250px;
     margin-bottom: 30px;
     background-image: url("../img/decoration/main-bg-portable.jpg");
+    background-size: 225%;
+  }
+
+  .cards__item--manufacturing {
+    background-position: 30% 96.5%;
+  }
+
+  .cards__item--assembling {
+    background-position: 76% 55%;
+  }
+
+  .cards__item--accessories {
+    background-position: 18% 63%;
   }
 
   .cards__item a {
@@ -2058,6 +2099,8 @@ template {
   .greetings {
     min-height: 560px;
     padding: 150px 0 190px;
+    background-size: auto 119%;
+    background-position: 25.5% 48%;
   }
 
   .greetings__wrapper {
@@ -2235,6 +2278,22 @@ template {
     display: inline;
   }
 
+  .cards__item {
+    background-size: 530%;
+  }
+
+  .cards__item--manufacturing {
+    background-position: 30.5% 53%;
+  }
+
+  .cards__item--assembling {
+    background-position: 29% 96%;
+  }
+
+  .cards__item--accessories {
+    background-position: 73% 69%;
+  }
+
   .cards__item::after {
     width: 40px;
     height: 40px;
@@ -2299,9 +2358,9 @@ template {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;

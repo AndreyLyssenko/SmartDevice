@@ -48,7 +48,7 @@
   align-self: flex-start;
   margin-right: auto;
   min-width: 215px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 
   @media (max-width: $desktop-width) {
     margin-bottom: 0;
@@ -88,12 +88,12 @@
 .footer__social-list {
   margin: 0 0 0 10px;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 40px);
+  gap: 15px;
   list-style-type: none;
   max-width: 150px;
   width: 100%;
-  justify-content: space-between;
 
   @media (max-width: $desktop-width) {
     margin-top: 5px;

@@ -151,12 +151,11 @@
                 <input type="text" id="feedback-name" name="name" placeholder="Имя" required>
                 <label class="visually-hidden" for="feedback-tel">Ваш номер телефона:</label>
                 <input type="tel" id="feedback-tel" name="tel" placeholder="Телефон" required data-phone-pattern>
-                <span class="form-error-message">Это поле должно быть формата +7(555) 123-12-12</span>
+                <span class="form-error-message">Это поле обязатально и должно быть формата +7(555) 123-12-12</span>
               </fieldset>
               <label class="visually-hidden" for="feedback-question">Задайте Ваш вопрос:</label>
               <textarea name="question" id="feedback-question" placeholder="Ваш вопрос"></textarea>
               <div class="feedback__submit">
-                <button class="button feedback__submit-button" type="submit">Задать вопрос</button>
                 <div class="feedback__checkbox-field">
                   <label for="feedback-processing-personal-data">
                     <input class="visually-hidden" type="checkbox" name="processing-personal-data" id="feedback-processing-personal-data" required checked>
@@ -164,6 +163,7 @@
                     Я согласен на обработку  персональных данных
                   </label>
                 </div>
+                <button class="button feedback__submit-button" type="submit">Задать вопрос</button>
               </div>
             </form>
           </div>
@@ -270,12 +270,11 @@
             <input type="text" id="popup-name" name="name" placeholder="Имя" required>
             <label class="visually-hidden" for="popup-tel">Ваш номер телефона:</label>
             <input type="tel" id="popup-tel" name="tel" placeholder="Телефон" required data-phone-pattern>
-            <span class="form-error-message">Это поле должно быть формата +7(555) 123-12-12</span>
+            <span class="form-error-message">Это поле обязатально и должно быть формата +7(555) 123-12-12</span>
           </fieldset>
           <label class="visually-hidden" for="popup-question">Задайте Ваш вопрос:</label>
           <textarea name="question" id="popup-question" placeholder="Ваш вопрос"></textarea>
           <div class="popup__submit">
-            <button class="button popup__submit-button" type="submit">Отправить</button>
             <div class="popup__checkbox-field">
               <label for="popup-processing-personal-data">
                 <input class="visually-hidden" type="checkbox" name="processing-personal-data" id="popup-processing-personal-data" required checked>
@@ -283,6 +282,7 @@
                 Я согласен на обработку  персональных данных
               </label>
             </div>
+            <button class="button popup__submit-button" type="submit">Отправить</button>
           </div>
         </form>
       </div>

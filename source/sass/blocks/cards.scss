@@ -75,7 +75,7 @@
   width: 100%;
   max-width: 1220px;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, 350px);
+  grid-template-columns: repeat(3, minmax(100px, 350px));
   gap: 85px;
 
   @media (max-width: $desktop-width) {
@@ -161,6 +161,19 @@
     min-height: 250px;
     margin-bottom: 30px;
     background-image: url("../img/decoration/main-bg-portable.jpg");
+    background-size: 225%;
+
+    &--manufacturing {
+      background-position: 30% 96.5%;
+    }
+
+    &--assembling {
+      background-position: 76% 55%;
+    }
+
+    &--accessories {
+      background-position: 18% 63%;
+    }
 
     a {
       padding: 37px 475px 37px 45px;
@@ -181,6 +194,20 @@
   }
 
   @media (max-width: $tablet-width) {
+    background-size: 530%;
+
+    &--manufacturing {
+      background-position: 30.5% 53%;
+    }
+
+    &--assembling {
+      background-position: 29% 96%;
+    }
+
+    &--accessories {
+      background-position: 73% 69%;
+    }
+
     &::after {
       width: 40px;
       height: 40px;

@@ -208,6 +208,7 @@
 
 .feedback__submit {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-end;
   max-width: 575px;
@@ -218,7 +219,7 @@
 
   @media (max-width: $tablet-width) {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 }
